@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+	maps			"zombie_defense"
+	"IsPlayable"	"1"
+	"zombie_defense"
+	{
+					"MaxPlayers"                    "5"
+	}
+}

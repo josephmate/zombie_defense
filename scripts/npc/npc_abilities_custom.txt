@@ -1,0 +1,110 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// Sniper Rifle Fire
+	//=================================================================================================================
+	"fire_sniper_rifle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+		"AbilityDamage"				"10"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+			"particle"					"particles/sniper_assassinate_linear.vpcf"
+		}
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"100 100 100 100"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length"			"2000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"2000"
+			}
+		}
+
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Ability.Assassinate"
+			}
+
+			"LinearProjectile"
+			{
+				"Target"			"POINT"
+				"EffectName"		"particles/sniper_assassinate_linear.vpcf"
+				"StartRadius"		"%width"
+				"EndRadius"			"%width"
+				"MoveSpeed"			"%speed"
+				"TargetTeams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"fDistance"		"%length"
+				"Distance"		"%length"
+				"FixedDistance"		"%length"
+				"ProvidesVision"	"1"
+				"HasFrontalCone"	"0"
+				"DeleteOnHit"	"1"
+				"bDeleteOnHit"	"1"
+			}
+			
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Sniper.AssassinateProjectile"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"Target"				"TARGET"
+				"EffectName"			"Hero_Sniper.AssassinateDamage"
+			}
+		
+			"Damage"
+			{
+				"Target"				"TARGET"
+				"Damage"				"%AbilityDamage"
+				"Type"					"DAMAGE_TYPE_PHYSICAL"
+			}
+		}
+
+	}
+}
