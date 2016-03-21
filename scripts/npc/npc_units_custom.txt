@@ -74,7 +74,7 @@
 
 		// Team
 		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_SURVIVORS"						// Team name.
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
@@ -107,8 +107,8 @@
 		//----------------------------------------------------------------
 		"Model" "models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_Melee"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"SoundSet"					"Zombie"					// Name of sound set.
+		"GameSoundsFile"			"soundevents/creatures/game_sounds_zombie.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				".9"
 
@@ -125,7 +125,6 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		// civilians have no attack
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"30"		// Damage range min.
 		"AttackDamageMax"			"36"		// Damage range max.
@@ -172,7 +171,7 @@
 
 		// Team
 		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_ZOMBIES"						// Team name.
+		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
