@@ -176,17 +176,9 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
-
-		"OnKill"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"create_zombie_on_kill.lua"
-				"Function"		"CreateZombieOnKill"
-			}
-		}
-
-
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                                      "create_zombie_on_kill"                      // Ability 1
 
 		//----------------------------------------------------------------
 		//----------------------------------------------------------------

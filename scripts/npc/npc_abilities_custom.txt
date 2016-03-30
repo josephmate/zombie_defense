@@ -107,4 +107,32 @@
 		}
 
 	}
+
+
+	"create_zombie_on_kill"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	"alchemist_goblins_greed"
+
+		"Modifiers"
+		{
+			"modifier_create_zombie_on_kill"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"create_zombie_on_kill.lua"
+						"Function"		"CreateZombieOnKill"
+					}
+			    }
+			}
+		}
+	}	
 }

@@ -9,7 +9,7 @@ function CreateZombieOnKill(event)
 	-- Variables
 	local killer = event.caster
 	local unitKilled = event.unit
-	local player = PlayerResource:GetPlayer( caster:GetPlayerID() )
+	--local playerid = PlayerResource:GetPlayer( event.caster:GetPlayerID() )
 	
 	Msg("CreateZombieOnKill")
 	PrintLinkedConsoleMessage("info", "CreateZombieOnKill")
@@ -18,6 +18,6 @@ function CreateZombieOnKill(event)
 		PrintLinkedConsoleMessage("info", "Was npc_civlian, making npc_zombie")
 		--  handle CreateUnitByName(string string_1, Vector Vector_2, bool bool_3, handle handle_4, handle handle_5, int int_6)
 		-- Creates a DOTA unit by its dota_npc_units.txt name ( szUnitName, vLocation, bFindClearSpace, hNPCOwner, hUnitOwner, iTeamNumber ) 
-		local zombie = CreateUnitByName("npc_zombie", target:GetAbsOrigin(), true, nil, nil, killer:GetTeam())
+		local zombie = CreateUnitByName("npc_zombie", unitKilled:GetAbsOrigin(), true, nil, nil, killer:GetTeam())
 	end
 end
